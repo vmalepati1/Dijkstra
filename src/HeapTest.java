@@ -13,7 +13,7 @@ public class HeapTest {
         PriorityQueue<Dist> checkpq = new PriorityQueue<Dist>();
         for(int x =0; x < 5; x++){
             Dist temp = new Dist(x, rnd.nextInt(100)+1);
-            DijGraph.insert(yoursolpq, temp);
+           // DijGraph.insert(yoursolpq, temp, x);
             checkpq.add(temp);
         }
         Dist[] expectedpq =(Dist[])checkpq.toArray(new Dist[0]);
@@ -28,7 +28,7 @@ public class HeapTest {
         PriorityQueue<Dist> checkpq = new PriorityQueue<Dist>();
         for(int x =0; x < numOfElements; x++){
             Dist temp = new Dist(x, rnd.nextInt(100)+1);
-            DijGraph.insert(yoursolpq, temp);
+            //DijGraph.insert(yoursolpq, temp, x);
             checkpq.add(temp);
         }
         for(int x = 0; x < 3; x++){

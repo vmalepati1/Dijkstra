@@ -30,5 +30,4 @@ public class Dist implements Comparable<Dist>{
     public void updateDist(int newDistance){
         dist = newDistance;
     }
-
 }

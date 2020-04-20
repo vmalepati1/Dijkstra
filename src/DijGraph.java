@@ -6,121 +6,6 @@ import java.util.*;
 
 public class DijGraph {
 
-    private static class MinHeap {
-        int size;
-        int capacity;
-        int[] pos;
-        Dist[] array;
-
-        public MinHeap(int capacity) {
-            this.pos = new int[capacity];
-            this.size = 0;
-            this.capacity = capacity;
-            this.array = new Dist[capacity];
-        }
-
-        private void swap(int a, int b) {
-            Dist temp = array[a];
-            array[a] = array[b];
-            array[b] = temp;
-        }
-
-        private void minHeapify(int idx) {
-            int smallest, left, right;
-            smallest = idx;
-            left = 2 * idx + 1;
-            right = 2 * idx + 2;
-
-            if (left < size && array[left].getDist() < array[smallest].getDist())
-                smallest = left;
-
-            if (right < size && array[right].getDist() < array[smallest].getDist())
-                smallest = right;
-
-            if (smallest != idx) {
-                // The nodes to be swapped in min heap
-                Dist smallestNode = array[smallest];
-                Dist idxNode = array[idx];
-
-                // Swap positions
-                pos[smallestNode.getNodeNumber()] = idx;
-                pos[idxNode.getNodeNumber()] = smallest;
-
-                // Swap nodes
-                swap(smallest, idx);
-
-                minHeapify(smallest);
-            }
-        }
-
-        private boolean isEmpty() {
-            return size == 0;
-        }
-
-        private Dist extractMin() {
-            if (isEmpty()) {
-                return null;
-            }
-
-            // Store the root node
-            Dist root = array[0];
-
-            // Replace root node with last node
-            Dist lastNode = array[size - 1];
-            array[0] = lastNode;
-
-            // Update position of last node
-            pos[root.getNodeNumber()] = size - 1;
-            pos[lastNode.getNodeNumber()] = 0;
-
-            // Reduce heap size and heapify root
-            --size;
-            minHeapify(0);
-
-            return root;
-        }
-
-        private void decreaseKey(int v, int dist) {
-            // Get the index of v in heap array
-            int i = pos[v];
-
-            // Get the node and update its dist value
-            array[i].updateDist(dist);
-
-            travelUp(i);
-        }
-
-        private void travelUp(int i) {
-            // Travel up while the complete tree is not heapified.
-            // This is a O(Logn) loop
-            while (i > 0 && array[i].getDist() < array[(i - 1) / 2].getDist()) {
-                // Swap this node with its parent
-                pos[array[i].getNodeNumber()] = (i - 1) / 2;
-                pos[array[(i - 1) / 2].getNodeNumber()] = i;
-                swap(i, (i - 1) / 2);
-
-                // move to parent index
-                i = (i - 1) / 2;
-            }
-        }
-
-        private void insert(Dist d) {
-            if (size >= capacity) {
-                return;
-            }
-
-            size++;
-            pos[d.getNodeNumber()] = size - 1;
-            array[size - 1] = d;
-            travelUp(size - 1);
-        }
-
-        private boolean isInMinHeap(int v) {
-            return pos[v] < size;
-        }
-
-    }
-
     static int MAXWEIGHT = 10000000;//The weight of edge will not exceed this number
     private Node[] nodeArr;//The vertices set in the graph
     private int nodeCount;//number of total vertices
@@ -180,31 +65,32 @@ public class DijGraph {
         int[] dist = new int[V];
         Dist[] result = new Dist[V + 1];
 
-        MinHeap minHeap = new MinHeap(V);
+        Dist[] heap = new Dist[V];
+        int size = 0;
 
         for (int v = 0; v < V; ++v) {
             dist[v] = Integer.MAX_VALUE;
-            minHeap.array[v] = new Dist(v, dist[v]);
-            minHeap.pos[v] = v;
+            heap[v] = new Dist(v, dist[v]);
         }
 
         source--;
 
         // Make dist value of src vertex as 0 so that it is extracted first
-        minHeap.array[source] = new Dist(source, dist[source]);
-        minHeap.pos[source] = source;
+        heap[source] = new Dist(source, dist[source]);
         dist[source] = 0;
-        minHeap.decreaseKey(source, dist[source]);
+        decreaseKey(heap, source, dist[source]);
 
         // Initially size of min heap is equal to V
-        minHeap.size = V;
+        size = V;
 
         // In the following loop, min heap contains all nodes
         // whose shortest distance is not yet finalized.
-        while (!minHeap.isEmpty())
+        while (size > 0)
         {
             // Extract the vertex with minimum distance value
-            Dist minHeapNode = minHeap.extractMin();
+            Dist minHeapNode = extractMin(heap, size);
+            size--;
+
             int u = minHeapNode.getNodeNumber(); // Store the extracted vertex number
 
             // Traverse through all adjacent vertices of u (the extracted
@@ -216,12 +102,12 @@ public class DijGraph {
 
                 // If shortest distance to v is not finalized yet, and distance to v
                 // through u is less than its previously calculated distance
-                if (minHeap.isInMinHeap(v) && dist[u] != Integer.MAX_VALUE &&
+                if (find(heap, v) < size && dist[u] != Integer.MAX_VALUE &&
                         weight + dist[u] < dist[v]) {
                     dist[v] = dist[u] + weight;
 
                     // update distance value in min heap also
-                    minHeap.decreaseKey(v, dist[v]);
+                    decreaseKey(heap, v, dist[v]);
                 }
             }
         }
@@ -243,46 +129,101 @@ public class DijGraph {
         return null;
     }
 
+    // Generic function to find the index of an element in an object array
+    private static int find(Dist[] a, int v)
+    {
+        for (int i = 0; i < a.length; i++)
+            if (a[i].getNodeNumber() == v)
+                return i;
+
+        return -1;
+    }
+
+    private static void swimUp(Dist[] array, int i) {
+        // Swim up while the complete tree is not heapified
+        while (i > 0 && array[(i - 1) / 2] != null && array[i].getDist() < array[(i - 1) / 2].getDist()) {
+            // Swap this node with its parent
+            swap(array, i, (i - 1) / 2);
+
+            // move to parent index
+            i = (i - 1) / 2;
+        }
+    }
+
     //Implement insertion in min heap
     //first insert the element to the end of the heap
     //then swim up the element if necessary
     //Set it as static as always
-    public static void insert(Dist[] arr, Dist value){
-        MinHeap heap = new MinHeap(arr.length);
-
-        for (Dist dist : arr) {
-            if (dist != null) {
-                heap.insert(dist);
-            }
+    public static void insert(Dist[] arr, Dist value, int index){
+        if (index >= arr.length) {
+            return;
         }
 
-        heap.insert(value);
-
-        System.arraycopy(heap.array, 0, arr, 0, arr.length);
+        arr[index] = value;
+        swimUp(arr, index);
     }
 
-    public static void swap(Dist []arr, int index1, int index2){
+    public static void swap(Dist[] arr, int index1, int index2){
         Dist temp = arr[index1];
         arr[index1] = arr[index2];
         arr[index2] = temp;
+    }
+
+    private static void minHeapify(Dist[] array, int idx, int size) {
+        int smallest, left, right;
+        smallest = idx;
+        left = 2 * idx + 1;
+        right = 2 * idx + 2;
+
+        if (left < size && array[left].getDist() < array[smallest].getDist())
+            smallest = left;
+
+        if (right < size && array[right].getDist() < array[smallest].getDist())
+            smallest = right;
+
+        if (smallest != idx) {
+            // The nodes to be swapped in min heap
+            Dist smallestNode = array[smallest];
+            Dist idxNode = array[idx];
+
+            // Swap nodes
+            swap(array, smallest, idx);
+
+            minHeapify(array, smallest, size);
+        }
     }
 
     //Extract the minimum element in the min heap
     //replace the last element with the root
     //then do minheapify
     //Set it as static as always
-    public static Dist extractMin (Dist[] arr, int size) {
-        MinHeap heap = new MinHeap(arr.length);
-
-        for (int i = 0; i < size; i++) {
-            heap.insert(arr[i]);
+    public static Dist extractMin(Dist[] arr, int size) {
+        if (size == 0) {
+            return null;
         }
 
-        Dist result = heap.extractMin();
+        // Store the root node
+        Dist root = arr[0];
 
-        if (heap.size >= 0) System.arraycopy(heap.array, 0, arr, 0, heap.size);
+        // Replace root node with last node
+        Dist lastNode = arr[size - 1];
+        arr[0] = lastNode;
 
-        return result;
+        // Reduce heap size and heapify root
+        --size;
+        minHeapify(arr, 0, size);
+
+        return root;
+    }
+
+    private static void decreaseKey(Dist[] array, int v, int dist) {
+        // Get the index of v in heap array
+        int i = find(array, v);
+
+        // Get the node and update its dist value
+        array[i].updateDist(dist);
+
+        swimUp(array, i);
     }
 
     //This will print the shortest distance result
@@ -296,7 +237,7 @@ public class DijGraph {
     }
 
     public static void main(String[] args)throws IOException {
-        DijGraph graph = new DijGraph("C:\\Users\\Vikas Malepati\\Documents\\Programming\\Dijkstra\\src\\localtest1.txt", 0);
+        DijGraph graph = new DijGraph("C:\\Users\\Vikas Malepati\\Documents\\GitHub\\Dijkstra\\src\\localtest1.txt", 0);
         Dist[] result  = graph.dijkstra(1);
         printResult(result, 1);
     }
