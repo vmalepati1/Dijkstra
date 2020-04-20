@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f33d72e-e1eb-4a53-836d-7e57a5838ca4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dijkstra/UnionFindTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dijkstra/UnionFindTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnionFindTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnionFindTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KruGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KruGraph.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,8 +51,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/KruGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+            <state relative-caret-position="-1292">
+              <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+              <folding>
+                <element signature="e#935#936#0" expanded="true" />
+                <element signature="e#994#995#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,15 +147,15 @@
         <option value="$PROJECT_DIR$/src/HeapTest.java" />
         <option value="$PROJECT_DIR$/src/KruTest.java" />
         <option value="$PROJECT_DIR$/src/MyEdge.java" />
-        <option value="$PROJECT_DIR$/src/KruGraph.java" />
         <option value="$PROJECT_DIR$/src/UnionFindTest.kt" />
         <option value="$PROJECT_DIR$/src/UnionFindTest.java" />
+        <option value="$PROJECT_DIR$/src/KruGraph.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="413" />
-    <option name="y" value="341" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="141" />
+    <option name="y" value="67" />
     <option name="width" value="976" />
     <option name="height" value="1100" />
   </component>
@@ -203,7 +204,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UnionFindTest">
+  <component name="RunManager" selected="Application.KruGraph">
     <configuration name="KruGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KruGraph" />
       <module name="Dijkstra" />
@@ -248,8 +249,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UnionFindTest" />
         <item itemvalue="Application.KruGraph" />
+        <item itemvalue="JUnit.UnionFindTest" />
         <item itemvalue="JUnit.HeapTest" />
         <item itemvalue="JUnit.UnionFindTest.testLeftSmall" />
         <item itemvalue="Application.KruTest" />
@@ -270,12 +271,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UnionFindTest_testEqualHeight - 2020.04.20 at 13h 20m 22s.xml">
-      <configuration name="UnionFindTest.testEqualHeight" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UnionFindTest_testEqualHeight - 2020.04.20 at 13h 21m 36s.xml">
-      <configuration name="UnionFindTest.testEqualHeight" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UnionFindTest_testEqualHeight - 2020.04.20 at 13h 21m 49s.xml">
       <configuration name="UnionFindTest.testEqualHeight" configurationId="JUnit" />
     </history-entry>
@@ -300,9 +295,15 @@
     <history-entry file="HeapTest - 2020.04.20 at 13h 52m 48s.xml">
       <configuration name="HeapTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UnionFindTest - 2020.04.20 at 14h 09m 00s.xml">
+      <configuration name="UnionFindTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UnionFindTest - 2020.04.20 at 14h 13m 54s.xml">
+      <configuration name="UnionFindTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-23" y="267" width="976" height="1100" extended-state="0" />
+    <frame x="141" y="67" width="976" height="1100" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25436682" />
@@ -511,13 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UnionFindTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DijGraph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -532,10 +526,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/KruGraph.java">
+    <entry file="file://$PROJECT_DIR$/src/UnionFindTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KruGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1292">
+          <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+          <folding>
+            <element signature="e#935#936#0" expanded="true" />
+            <element signature="e#994#995#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

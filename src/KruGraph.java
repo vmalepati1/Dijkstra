@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class KruGraph {
+    private Vertex[] vertexArr;
     private ArrayList<MyEdge> edgeArr;
     private int vertexCount;
     private int edgeCount;
@@ -15,13 +16,19 @@ public class KruGraph {
         vertexCount = sc.nextInt();
         edgeCount = sc.nextInt();
         edgeArr = new ArrayList<>();
+        vertexArr = new Vertex[vertexCount];
 
         for(int i = 0; i < edgeCount; i ++){
             int begin = sc.nextInt() - 1;
             int end = sc.nextInt() - 1;
             int weight = sc.nextInt();
-            edgeArr.add(new MyEdge(begin, end, weight));
+            addEgde(begin, end, weight);
         }
+    }
+
+    //Could be a helper function
+    private void addEgde(int from, int to, int weight){
+        edgeArr.add(new MyEdge(from, to, weight));
     }
 
     //Implement Kruskal with weighted union find algorithm
@@ -32,19 +39,17 @@ public class KruGraph {
 
         int i = 0;
 
-        Vertex[] subsets = new Vertex[vertexCount];
-
         for (int v = 0; v < vertexCount; v++) {
             Vertex vertex = new Vertex(v);
-            subsets[v] = vertex;
-            subsets[v].updateParent(vertex);
+            vertexArr[v] = vertex;
+            vertexArr[v].updateParent(vertex);
         }
 
         while (result.size() < vertexCount - 1) {
             MyEdge next_edge = edgeArr.get(i++);
 
-            Vertex x = find(subsets[next_edge.getS()]);
-            Vertex y = find(subsets[next_edge.getD()]);
+            Vertex x = find(vertexArr[next_edge.getS()]);
+            Vertex y = find(vertexArr[next_edge.getD()]);
 
             // If including this edge does't cause cycle,
             // include it in result and increment the index
