@@ -28,6 +28,18 @@ public class MyEdge implements Comparable<MyEdge> {
         return  weight;
     }
 
+    public void setSource(int source) {
+        this.source = source;
+    }
+
+    public void setDestination(int destination) {
+        this.destination = destination;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
     @Override
     public int compareTo(MyEdge o) {
         return Integer.compare(this.weight, o.weight);

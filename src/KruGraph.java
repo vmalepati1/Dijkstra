@@ -1,41 +1,78 @@
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.PriorityQueue;
-import java.util.Scanner;
+import java.util.*;
 
 public class KruGraph {
-    private Vertex[] vertexArr;
-    private ArrayList<MyEdge> edgeArr;
+    private MyEdge[] edgeArr;
     private int vertexCount;
     private int edgeCount;
 
     //Implement the constructor for KruGraph
     //The format of the input file is the same as the format of the input file in Dijkstra
-    public KruGraph(String graph_file)throws IOException{
-        //TODO
+    public KruGraph(String graph_file)throws IOException {
+        File file = new File(graph_file);
+        Scanner sc = new Scanner(file);
+        vertexCount = sc.nextInt();
+        edgeCount = sc.nextInt();
+        edgeArr = new MyEdge[edgeCount];
 
+        for(int i = 0; i < edgeCount; i ++){
+            int begin = sc.nextInt() - 1;
+            int end = sc.nextInt() - 1;
+            int weight = sc.nextInt();
+            edgeArr[i] = new MyEdge(begin, end, weight);
+        }
     }
-
-    //Could be a helper function
-    private void addEgde(int from, int to, int weight){
-        //TODO
-
-    }
-
 
     //Implement Kruskal with weighted union find algorithm
-    public PriorityQueue<MyEdge> kruskalMST(){
-        //TODO
-        return null;
+    public PriorityQueue<MyEdge> kruskalMST() {
+        PriorityQueue<MyEdge> result = new PriorityQueue<>();
+
+        Arrays.sort(edgeArr);
+
+        int i = 0;
+
+        Vertex[] subsets = new Vertex[vertexCount];
+
+        for (int v = 0; v < vertexCount; v++) {
+            Vertex vertex = new Vertex(v);
+            subsets[v] = vertex;
+            subsets[v].updateParent(vertex);
+        }
+
+        while (result.size() < vertexCount - 1) {
+            MyEdge next_edge = edgeArr[i++];
+
+            Vertex x = find(subsets[next_edge.getS()]);
+            Vertex y = find(subsets[next_edge.getD()]);
+
+            // If including this edge does't cause cycle,
+            // include it in result and increment the index
+            // of result for next edge
+            if (!(x.equals(y)))
+            {
+                result.add(next_edge);
+                union(x, y);
+            }
+            // Else discard the next_edge
+        }
+
+        for (MyEdge e : result) {
+            e.setSource(e.getS() + 1);
+            e.setDestination(e.getD() + 1);
+        }
+
+        return result;
     }
 
     //Implement the recursion trick for the leaves to update the parent efficiently
     //Set it as static as always
     public static Vertex find(Vertex x){
-        //TODO
-        return null;
+        if (!(x.getParent().equals(x))) {
+            x.updateParent(find(x.getParent()));
+        }
+
+        return x.getParent();
     }
 
 
@@ -43,9 +80,24 @@ public class KruGraph {
     //Return true when the edge can be picked in the MST
     //Otherwise return false
     //Set it as static as always
-    public static boolean union(Vertex x, Vertex y){
-        //TODO
-        return false;
+    public static void union(Vertex x, Vertex y){
+        Vertex xroot = find(x);
+        Vertex yroot = find(y);
+
+        // Attach smaller rank tree under root of high rank tree
+        // (Union by Rank)
+        if (xroot.getSize() < yroot.getSize()) {
+            xroot.updateParent(yroot);
+            yroot.updateSize(yroot.getSize() + xroot.getSize());
+        } else if (xroot.getSize() > yroot.getSize()) {
+            yroot.updateParent(xroot);
+            xroot.updateSize(xroot.getSize() + yroot.getSize());
+            // If ranks are same, then make one as root and increment
+            // its rank by one
+        } else {
+            xroot.updateParent(yroot);
+            yroot.updateSize(yroot.getSize() + xroot.getSize());
+        }
     }
 
     //This is what we expect for the output format
@@ -66,8 +118,8 @@ public class KruGraph {
     }
 
     public static void main(String[] args) throws IOException {
-        KruGraph graph = new KruGraph(args[0]);
-        //printGraph(graph.kruskalMST());
+        KruGraph graph = new KruGraph("C:\\Users\\Vikas Malepati\\Documents\\GitHub\\Dijkstra\\src\\localtest1.txt");
+        printGraph(graph.kruskalMST());
     }
 
 }

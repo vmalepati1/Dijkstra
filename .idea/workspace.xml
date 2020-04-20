@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f33d72e-e1eb-4a53-836d-7e57a5838ca4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DijGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DijGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HeapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HeapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KruGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KruGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyEdge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vertex.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DijGraph.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="384">
-              <caret line="239" selection-start-line="239" selection-end-line="241" selection-end-column="31" />
+              <caret line="239" column="115" lean-forward="true" selection-start-line="239" selection-start-column="38" selection-end-line="239" selection-end-column="115" />
             </state>
           </provider>
         </entry>
@@ -33,16 +32,30 @@
         <entry file="file://$PROJECT_DIR$/src/HeapTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/localmap.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/localtest1.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="11" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/KruGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+            <state relative-caret-position="418">
+              <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -50,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UnionFindTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+            <state relative-caret-position="170">
+              <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -59,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dist.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+            <state relative-caret-position="527">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
               <folding>
                 <element signature="e#524#525#0" expanded="true" />
                 <element signature="e#551#552#0" expanded="true" />
@@ -76,17 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DeliverySystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="197">
               <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Delivery.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -94,9 +98,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyEdge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" column="27" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="27" />
+            <state relative-caret-position="510">
+              <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
               <folding>
+                <element signature="e#504#505#0" expanded="true" />
+                <element signature="e#533#534#0" expanded="true" />
+                <element signature="e#699#700#0" expanded="true" />
+                <element signature="e#735#736#0" expanded="true" />
+                <element signature="e#786#787#0" expanded="true" />
+                <element signature="e#832#833#0" expanded="true" />
+                <element signature="e#873#874#0" expanded="true" />
+                <element signature="e#909#910#0" expanded="true" />
                 <element signature="e#702#703#0" expanded="true" />
                 <element signature="e#763#764#0" expanded="true" />
               </folding>
@@ -104,29 +116,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Node.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-              <folding>
-                <element signature="e#806#807#0" expanded="true" />
-                <element signature="e#832#833#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Vertex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -134,17 +131,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/MyEdge.java" />
         <option value="$PROJECT_DIR$/src/Dist.java" />
-        <option value="$PROJECT_DIR$/src/HeapTest.java" />
         <option value="$PROJECT_DIR$/src/DijGraph.java" />
+        <option value="$PROJECT_DIR$/src/Vertex.java" />
+        <option value="$PROJECT_DIR$/src/HeapTest.java" />
+        <option value="$PROJECT_DIR$/src/KruTest.java" />
+        <option value="$PROJECT_DIR$/src/MyEdge.java" />
+        <option value="$PROJECT_DIR$/src/KruGraph.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
+    <option name="x" value="909" />
+    <option name="y" value="3" />
+    <option name="width" value="976" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
@@ -192,49 +192,44 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DijGraph">
-    <configuration name="DijGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DijGraph" />
+  <component name="RunManager" selected="Application.KruGraph">
+    <configuration name="KruGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="KruGraph" />
       <module name="Dijkstra" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DijGraph.testHeap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KruTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="KruTest" />
       <module name="Dijkstra" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DijGraph" />
-      <option name="METHOD_NAME" value="testHeap" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DijGraph.testLol" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Dijkstra" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DijGraph" />
-      <option name="METHOD_NAME" value="testLol" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HeapTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HeapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dijkstra" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="HeapTest" />
-      <option name="METHOD_NAME" value="testInsert" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HeapTest.testextractMin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UnionFindTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dijkstra" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HeapTest" />
-      <option name="METHOD_NAME" value="testextractMin" />
+      <option name="MAIN_CLASS_NAME" value="UnionFindTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnionFindTest.testEqualHeight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dijkstra" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UnionFindTest" />
+      <option name="METHOD_NAME" value="testEqualHeight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -242,11 +237,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DijGraph" />
-        <item itemvalue="JUnit.HeapTest.testextractMin" />
-        <item itemvalue="JUnit.HeapTest.testInsert" />
-        <item itemvalue="JUnit.DijGraph.testLol" />
-        <item itemvalue="JUnit.DijGraph.testHeap" />
+        <item itemvalue="Application.KruGraph" />
+        <item itemvalue="Application.KruTest" />
+        <item itemvalue="JUnit.UnionFindTest" />
+        <item itemvalue="JUnit.HeapTest" />
+        <item itemvalue="JUnit.UnionFindTest.testEqualHeight" />
       </list>
     </recent_temporary>
   </component>
@@ -264,42 +259,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HeapTest_testInsert - 2020.04.20 at 10h 50m 16s.xml">
-      <configuration name="HeapTest.testInsert" configurationId="JUnit" />
+    <history-entry file="UnionFindTest_testEqualHeight - 2020.04.20 at 13h 19m 06s.xml">
+      <configuration name="UnionFindTest.testEqualHeight" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HeapTest_testInsert - 2020.04.20 at 10h 55m 35s.xml">
-      <configuration name="HeapTest.testInsert" configurationId="JUnit" />
+    <history-entry file="UnionFindTest_testEqualHeight - 2020.04.20 at 13h 19m 56s.xml">
+      <configuration name="UnionFindTest.testEqualHeight" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HeapTest_testInsert - 2020.04.20 at 10h 55m 38s.xml">
-      <configuration name="HeapTest.testInsert" configurationId="JUnit" />
+    <history-entry file="UnionFindTest_testEqualHeight - 2020.04.20 at 13h 20m 22s.xml">
+      <configuration name="UnionFindTest.testEqualHeight" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HeapTest_testInsert - 2020.04.20 at 10h 55m 41s.xml">
-      <configuration name="HeapTest.testInsert" configurationId="JUnit" />
+    <history-entry file="UnionFindTest_testEqualHeight - 2020.04.20 at 13h 21m 36s.xml">
+      <configuration name="UnionFindTest.testEqualHeight" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HeapTest_testInsert - 2020.04.20 at 10h 55m 42s.xml">
-      <configuration name="HeapTest.testInsert" configurationId="JUnit" />
+    <history-entry file="UnionFindTest_testEqualHeight - 2020.04.20 at 13h 21m 49s.xml">
+      <configuration name="UnionFindTest.testEqualHeight" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HeapTest_testextractMin - 2020.04.20 at 10h 59m 44s.xml">
-      <configuration name="HeapTest.testextractMin" configurationId="JUnit" />
+    <history-entry file="UnionFindTest - 2020.04.20 at 13h 22m 05s.xml">
+      <configuration name="UnionFindTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HeapTest_testextractMin - 2020.04.20 at 10h 59m 46s.xml">
-      <configuration name="HeapTest.testextractMin" configurationId="JUnit" />
+    <history-entry file="HeapTest - 2020.04.20 at 13h 22m 11s.xml">
+      <configuration name="HeapTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HeapTest_testextractMin - 2020.04.20 at 10h 59m 48s.xml">
-      <configuration name="HeapTest.testextractMin" configurationId="JUnit" />
+    <history-entry file="HeapTest - 2020.04.20 at 13h 22m 28s.xml">
+      <configuration name="HeapTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HeapTest_testextractMin - 2020.04.20 at 10h 59m 49s.xml">
-      <configuration name="HeapTest.testextractMin" configurationId="JUnit" />
+    <history-entry file="UnionFindTest - 2020.04.20 at 13h 22m 54s.xml">
+      <configuration name="UnionFindTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HeapTest_testextractMin - 2020.04.20 at 10h 59m 51s.xml">
-      <configuration name="HeapTest.testextractMin" configurationId="JUnit" />
+    <history-entry file="UnionFindTest - 2020.04.20 at 13h 23m 33s.xml">
+      <configuration name="UnionFindTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.124200426" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.124200426" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -308,7 +303,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -390,22 +385,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/localtest1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/localExpectedOutputk1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="23" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/localmap.txt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/src.zip!/java/util/PriorityQueue.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -418,13 +403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1037">
           <caret line="103" column="23" selection-start-line="103" selection-start-column="23" selection-end-line="103" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DeliverySystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -446,42 +424,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UnionFindTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Vertex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyEdge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="27" />
+        <state relative-caret-position="153">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
           <folding>
-            <element signature="e#702#703#0" expanded="true" />
-            <element signature="e#763#764#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vertex.java">
+    <entry file="file://$PROJECT_DIR$/src/localmap.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/localtest1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        <state>
+          <caret selection-end-line="11" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/KruGraph.java">
+    <entry file="file://$PROJECT_DIR$/src/DijGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+        <state relative-caret-position="384">
+          <caret line="239" column="115" lean-forward="true" selection-start-line="239" selection-start-column="38" selection-end-line="239" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DeliverySystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Dist.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        <state relative-caret-position="527">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="e#524#525#0" expanded="true" />
             <element signature="e#551#552#0" expanded="true" />
@@ -496,14 +478,53 @@
     <entry file="file://$PROJECT_DIR$/src/HeapTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DijGraph.java">
+    <entry file="file://$PROJECT_DIR$/src/UnionFindTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="239" selection-start-line="239" selection-end-line="241" selection-end-column="31" />
+        <state relative-caret-position="170">
+          <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KruTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="152" column="32" lean-forward="true" selection-start-line="152" selection-start-column="32" selection-end-line="152" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#5226#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#873#874#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KruGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
         </state>
       </provider>
     </entry>

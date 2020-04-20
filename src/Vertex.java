@@ -32,4 +32,13 @@ public class Vertex {
         size = newSize;
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null) return false;
+        if (!(object instanceof Vertex)) return false;
+        Vertex vec = (Vertex) object;
+        return vec.vertextNum == vertextNum;
+    }
+
 }
