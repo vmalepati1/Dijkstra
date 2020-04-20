@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class KruGraph {
-    private MyEdge[] edgeArr;
+    private ArrayList<MyEdge> edgeArr;
     private int vertexCount;
     private int edgeCount;
 
@@ -14,13 +14,13 @@ public class KruGraph {
         Scanner sc = new Scanner(file);
         vertexCount = sc.nextInt();
         edgeCount = sc.nextInt();
-        edgeArr = new MyEdge[edgeCount];
+        edgeArr = new ArrayList<>();
 
         for(int i = 0; i < edgeCount; i ++){
             int begin = sc.nextInt() - 1;
             int end = sc.nextInt() - 1;
             int weight = sc.nextInt();
-            edgeArr[i] = new MyEdge(begin, end, weight);
+            edgeArr.add(new MyEdge(begin, end, weight));
         }
     }
 
@@ -28,7 +28,7 @@ public class KruGraph {
     public PriorityQueue<MyEdge> kruskalMST() {
         PriorityQueue<MyEdge> result = new PriorityQueue<>();
 
-        Arrays.sort(edgeArr);
+        Collections.sort(edgeArr);
 
         int i = 0;
 
@@ -41,7 +41,7 @@ public class KruGraph {
         }
 
         while (result.size() < vertexCount - 1) {
-            MyEdge next_edge = edgeArr[i++];
+            MyEdge next_edge = edgeArr.get(i++);
 
             Vertex x = find(subsets[next_edge.getS()]);
             Vertex y = find(subsets[next_edge.getD()]);

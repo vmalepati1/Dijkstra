@@ -7,8 +7,6 @@ import org.junit.Test;
 
 public class UnionFindTest {
 
-
-
     @Test
     public void testLeftSmall (){
         Vertex test1 = new Vertex(1);
