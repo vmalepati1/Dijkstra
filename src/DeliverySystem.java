@@ -10,8 +10,8 @@ public class DeliverySystem {
     //However there is nothing for you to implement
     //You could use this for testing
     public static void main(String[] args)throws IOException {
-        DijGraph westLafayetteMap = new DijGraph(args[0], 1);
-        File diliveryFile = new File(args[1]);
+        DijGraph westLafayetteMap = new DijGraph("C:\\Users\\Vikas Malepati\\Documents\\GitHub\\Dijkstra\\src\\localmap.txt", 1);
+        File diliveryFile = new File("C:\\Users\\Vikas Malepati\\Documents\\GitHub\\Dijkstra\\src\\localdelivery.txt");
         Scanner sc = new Scanner(diliveryFile);
         while(sc.hasNextLine()){
             String restaurantName = sc.next();

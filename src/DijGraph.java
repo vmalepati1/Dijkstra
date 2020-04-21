@@ -7,6 +7,7 @@ import java.util.*;
 public class DijGraph {
 
     static int MAXWEIGHT = 10000000;//The weight of edge will not exceed this number
+
     private Node[] nodeArr;//The vertices set in the graph
     private int nodeCount;//number of total vertices
     private int edgeCount;//number of total edges
@@ -130,7 +131,7 @@ public class DijGraph {
     }
 
     // Generic function to find the index of an element in an object array
-    private static int find(Dist[] a, int v)
+    public static int find(Dist[] a, int v)
     {
         for (int i = 0; i < a.length; i++)
             if (a[i].getNodeNumber() == v)
@@ -234,6 +235,18 @@ public class DijGraph {
                 System.out.println(result[x].getNodeNumber() + " " +result[x].getDist());
             }
         }
+    }
+
+    public Node[] getNodeArr() {
+        return nodeArr;
+    }
+
+    public int getNodeCount() {
+        return nodeCount;
+    }
+
+    public int getEdgeCount() {
+        return edgeCount;
     }
 
     public static void main(String[] args)throws IOException {
