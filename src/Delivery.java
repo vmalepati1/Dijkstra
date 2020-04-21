@@ -52,17 +52,17 @@ public class Delivery {
             int secondStop = customer[p[1] - 1].getNodeNumber();
             int thirdStop = customer[p[2] - 1].getNodeNumber();
 
-            double firstOrder = order[find(customer, westLafayette.getNodeArr()[firstStop].getLocation())];
-            double secondOrder = order[find(customer, westLafayette.getNodeArr()[secondStop].getLocation())];
-            double thirdOrder = order[find(customer, westLafayette.getNodeArr()[thirdStop].getLocation())];
+            double firstOrder = order[p[0] - 1];
+            double secondOrder = order[p[1] - 1];
+            double thirdOrder = order[p[2] - 1];
 
             int firstTrip = getShortestDistance(restaurant.getNodeNumber(), firstStop);
-            int secondTrip = getShortestDistance(firstStop, secondStop);
-            int thirdTrip = getShortestDistance(secondStop, thirdStop);
+            int secondTrip = firstTrip + getShortestDistance(firstStop, secondStop);
+            int thirdTrip = secondTrip + getShortestDistance(secondStop, thirdStop);
 
-            double firstPercent = (slope * firstTrip + intercept) / 100;
-            double secondPercent = (slope * secondTrip + intercept) / 100;
-            double thirdPercent = (slope * thirdTrip + intercept) / 100;
+            double firstPercent = (slope * firstTrip + intercept) / 100.0;
+            double secondPercent = (slope * secondTrip + intercept) / 100.0;
+            double thirdPercent = (slope * thirdTrip + intercept) / 100.0;
 
             double current = firstPercent * firstOrder + secondPercent * secondOrder + thirdPercent * thirdOrder;
 
