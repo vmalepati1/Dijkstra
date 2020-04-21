@@ -36,59 +36,42 @@ public class Delivery {
     //Each time the driver only picks up three orders
     //Picking up N orders and find the maximum tips will be NP-hard
     public double bestPath(){
-        int n = westLafayette.getNodeCount() + 1;
-        int[][] d = new int[n][n];
+        int[][] permutations = {
+                {1, 2, 3},
+                {1, 3, 2},
+                {2, 1, 3},
+                {2, 3, 1},
+                {3, 1, 2},
+                {3, 2, 1}
+        };
 
-        for (int i = 1; i < n; i++) {
-            for (int j = 1; j < n; j++) {
-                d[i][j] = Integer.MAX_VALUE;
+        double max = 0;
+
+        for (int[] p : permutations) {
+            int firstStop = customer[p[0] - 1].getNodeNumber();
+            int secondStop = customer[p[1] - 1].getNodeNumber();
+            int thirdStop = customer[p[2] - 1].getNodeNumber();
+
+            double firstOrder = order[find(customer, westLafayette.getNodeArr()[firstStop].getLocation())];
+            double secondOrder = order[find(customer, westLafayette.getNodeArr()[secondStop].getLocation())];
+            double thirdOrder = order[find(customer, westLafayette.getNodeArr()[thirdStop].getLocation())];
+
+            int firstTrip = getShortestDistance(restaurant.getNodeNumber(), firstStop);
+            int secondTrip = getShortestDistance(firstStop, secondStop);
+            int thirdTrip = getShortestDistance(secondStop, thirdStop);
+
+            double firstPercent = (slope * firstTrip + intercept) / 100;
+            double secondPercent = (slope * secondTrip + intercept) / 100;
+            double thirdPercent = (slope * thirdTrip + intercept) / 100;
+
+            double current = firstPercent * firstOrder + secondPercent * secondOrder + thirdPercent * thirdOrder;
+
+            if (current > max) {
+                max = current;
             }
         }
 
-        for (int k = 1; k < n; k++) {
-            for (int i = 1; i < n; i++) {
-                for (int j = 1; j < n; j++) {
-                    d[i][j] = Math.min(getShortestDistance(i, j),
-                            getShortestDistance(i, k) + getShortestDistance(k, j));
-                }
-            }
-        }
-
-        int shortest = Integer.MAX_VALUE;
-        List<Integer> winningSequence = null;
-
-        List<Integer> l = Arrays.stream(customer).map(Node::getNodeNumber).collect(Collectors.toList());
-
-        PermutationIterable<Integer> permutationIterable1 = new PermutationIterable<Integer>(l, new IndicesWalker<Integer>(l.size()));
-
-        for (List<Integer> p : permutationIterable1) {
-            int current = d[restaurant.getNodeNumber()][p.get(0)] + d[p.get(0)][p.get(1)] + d[p.get(1)][p.get(2)];
-
-            if (current < shortest) {
-                shortest = current;
-                winningSequence = new ArrayList<>(p);
-            }
-        }
-
-        assert winningSequence != null;
-
-        int firstStop = winningSequence.get(0);
-        int secondStop = winningSequence.get(1);
-        int thirdStop = winningSequence.get(2);
-
-        double firstOrder = order[find(customer, westLafayette.getNodeArr()[firstStop].getLocation())];
-        double secondOrder = order[find(customer, westLafayette.getNodeArr()[secondStop].getLocation())];
-        double thirdOrder = order[find(customer, westLafayette.getNodeArr()[thirdStop].getLocation())];
-
-        int firstTrip = getShortestDistance(restaurant.getNodeNumber(), winningSequence.get(0));
-        int secondTrip = getShortestDistance(winningSequence.get(0), winningSequence.get(1));
-        int thirdTrip = getShortestDistance(winningSequence.get(1), winningSequence.get(2));
-
-        double firstPercent = (slope * firstTrip + intercept) / 100;
-        double secondPercent = (slope * secondTrip + intercept) / 100;
-        double thirdPercent = (slope * thirdTrip + intercept) / 100;
-
-        return firstPercent * firstOrder + secondPercent * secondOrder + thirdPercent * thirdOrder;
+        return max;
     }
 
 }
